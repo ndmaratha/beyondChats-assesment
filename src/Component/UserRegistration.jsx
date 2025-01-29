@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
-
 const UserRegistration = () => {
 	const [verificationCode, setVerificationCode] = useState("");
 	const [isVerified, setIsVerified] = useState(false);
@@ -23,29 +22,27 @@ const UserRegistration = () => {
 	};
 
 	return (
-		<div className='w-full max-w-[90%] sm:max-w-md mx-auto p-4 sm:p-6 bg-white rounded-lg shadow-md mt-4 sm:mt-8 text-black border-black'>
-			<h1 className='text-xl sm:text-2xl font-bold mb-4 text-black'>
-				User Registration
-			</h1>
+		<div className='max-w-md mx-auto p-6 bg-white rounded-lg shadow-md mt-8 text-black border-black'>
+			<h1 className='text-2xl font-bold mb-4 text-black'>User Registration</h1>
 
 			<Formik
 				initialValues={{ name: "", email: "", password: "" }}
 				validationSchema={validationSchema}
 				onSubmit={() => setVerificationCode("123456")}
 			>
-				<Form className='space-y-3 sm:space-y-4'>
+				<Form className='space-y-4'>
 					<div>
 						<label className='block text-sm font-medium mb-1 text-black'>
 							Name
 						</label>
 						<Field
 							name='name'
-							className='w-full p-2 sm:p-3 border border-black rounded text-sm sm:text-base'
+							className='w-full p-2 border border-black rounded'
 						/>
 						<ErrorMessage
 							name='name'
 							component='div'
-							className='text-red-500 text-xs sm:text-sm mt-1'
+							className='text-red-500 text-sm'
 						/>
 					</div>
 
@@ -56,12 +53,12 @@ const UserRegistration = () => {
 						<Field
 							name='email'
 							type='email'
-							className='w-full p-2 sm:p-3 border border-black rounded text-sm sm:text-base'
+							className='w-full p-2 border border-black rounded'
 						/>
 						<ErrorMessage
 							name='email'
 							component='div'
-							className='text-red-500 text-xs sm:text-sm mt-1'
+							className='text-red-500 text-sm'
 						/>
 					</div>
 
@@ -72,18 +69,18 @@ const UserRegistration = () => {
 						<Field
 							name='password'
 							type='password'
-							className='w-full p-2 sm:p-3 border border-black rounded text-sm sm:text-base'
+							className='w-full p-2 border border-black rounded'
 						/>
 						<ErrorMessage
 							name='password'
 							component='div'
-							className='text-red-500 text-xs sm:text-sm mt-1'
+							className='text-red-500 text-sm'
 						/>
 					</div>
 
 					<button
 						type='submit'
-						className='w-full bg-blue-500 text-black p-2 sm:p-3 rounded hover:bg-blue-600 border-black text-sm sm:text-base'
+						className='w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 border-black'
 					>
 						Register
 					</button>
@@ -93,13 +90,13 @@ const UserRegistration = () => {
 			{verificationCode && !isVerified && (
 				<div className='mt-4 space-y-2'>
 					<input
-						placeholder='Enter verification code "123456"'
-						className='w-full p-2 sm:p-3 border border-black rounded text-sm sm:text-base'
+						placeholder='Enter verification code ""123456""'
+						className='w-full p-2 border border-black rounded'
 						type='number'
 						onChange={(e) => setVerificationCode(e.target.value)}
 					/>
 					<button
-						className='w-full bg-green-500 text-black p-2 sm:p-3 rounded hover:bg-green-600 border-black text-sm sm:text-base'
+						className='w-full bg-green-500 text-white p-2 rounded hover:bg-green-600 border-black'
 						onClick={() => handleVerification(verificationCode)}
 					>
 						Verify Email
@@ -108,12 +105,10 @@ const UserRegistration = () => {
 			)}
 
 			{isVerified && (
-				<div className='mt-4 text-green-500 text-sm sm:text-base'>
-					Email verified successfully!
-				</div>
+				<div className='mt-4 text-green-500'>Email verified successfully!</div>
 			)}
 
-			<button className='w-full mt-4 bg-gray-100 p-2 sm:p-3 text-black rounded hover:bg-gray-200 border-black text-sm sm:text-base '>
+			<button className='w-full mt-4 bg-gray-100 p-2 text-white rounded hover:bg-gray-200 border-black'>
 				Continue with Google
 			</button>
 		</div>
