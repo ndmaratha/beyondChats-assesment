@@ -83,7 +83,7 @@ const UserRegistration = () => {
 
 					<button
 						type='submit'
-						className='w-full bg-blue-500 text-white p-2 sm:p-3 rounded hover:bg-blue-600 border-black text-sm sm:text-base bg-blue-500 text-white p-2 sm:p-3 rounded hover:bg-blue-600 border-black text-sm'
+						className='w-full bg-blue-500 text-black p-2 sm:p-3 rounded hover:bg-blue-600 border-black text-sm sm:text-base'
 					>
 						Register
 					</button>
@@ -99,7 +99,7 @@ const UserRegistration = () => {
 						onChange={(e) => setVerificationCode(e.target.value)}
 					/>
 					<button
-						className='w-full bg-green-500 text-white p-2 sm:p-3 rounded hover:bg-green-600 border-black text-sm sm:text-base'
+						className='w-full bg-green-500 text-black p-2 sm:p-3 rounded hover:bg-green-600 border-black text-sm sm:text-base'
 						onClick={() => handleVerification(verificationCode)}
 					>
 						Verify Email
@@ -108,12 +108,12 @@ const UserRegistration = () => {
 			)}
 
 			{isVerified && (
-				<div className='mt-4 text-green-500 text-sm sm:text-base '>
+				<div className='mt-4 text-green-500 text-sm sm:text-base'>
 					Email verified successfully!
 				</div>
 			)}
 
-			<button className='w-full mt-4 bg-gray-100 p-2 sm:p-3 text-gray-800 rounded hover:bg-gray-200 border-black text-sm sm:text-base mt-4 bg-gray-100 p-2 sm:p-3 text-gray-800 rounded hover:bg-gray-200 border-black text-sm'>
+			<button className='w-full mt-4 bg-gray-100 p-2 sm:p-3 text-black rounded hover:bg-gray-200 border-black text-sm sm:text-base '>
 				Continue with Google
 			</button>
 		</div>
