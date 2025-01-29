@@ -83,7 +83,7 @@ const UserRegistration = () => {
 
 					<button
 						type='submit'
-						className='w-full bg-blue-500 text-white p-2 sm:p-3 rounded hover:bg-blue-600 border-black text-sm sm:text-base'
+						className='w-full bg-blue-500 text-white p-2 sm:p-3 rounded hover:bg-blue-600 border-black text-sm sm:text-base bg-blue-500 text-white p-2 sm:p-3 rounded hover:bg-blue-600 border-black text-sm'
 					>
 						Register
 					</button>
@@ -108,7 +108,7 @@ const UserRegistration = () => {
 			)}
 
 			{isVerified && (
-				<div className='mt-4 text-green-500 text-sm sm:text-base'>
+				<div className='mt-4 text-green-500 text-sm sm:text-base '>
 					Email verified successfully!
 				</div>
 			)}
